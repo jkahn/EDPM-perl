@@ -1,0 +1,181 @@
+#!/usr/nikola/bin/perl
+
+use strict;
+use warnings;
+
+#Globals
+my $verbose = 0;
+
+use FindBin;
+use lib "$FindBin::Bin/../libs";
+
+#use BLEU;
+#use TER;
+#use NGM;
+
+use EDPM;
+use ScoreConfig;
+
+{
+  use Getopt::Long;
+  use Pod::Usage;
+
+  my ( $help, $man );
+  my $revision = q$Id$;
+  my $translation;
+  my (@references);
+  my (@scores) = 'EDPM';
+
+  GetOptions(
+	     # help parameters
+	     'help|?' => \$help,
+	     man      => \$man,
+	     'verbose+' => \$verbose,
+	     'version' => sub {
+	       pod2usage (-exitstatus => 0, -verbose => 0,
+			  -message  => "CVS revision: \$$revision\$") },
+
+	     # system parameters here; use `perldoc Getopt::Long` to
+	     # see what you can do
+	     'translation=s' => \$translation,
+	     'reference=s' => \@references,
+
+	    ) or pod2usage(2);
+  pod2usage(1) if ($help);
+  pod2usage( -exitstatus => 0, -verbose => 2 ) if ($man);
+
+  # arg checking here (use pod2usage here; test for -f or -d etc)
+
+  pod2usage "no --translation defined"
+    unless defined $translation;
+  pod2usage "no --reference defined"
+    unless @references;
+
+  pod2usage "--translation $translation not a readable file"
+    unless -r $translation;
+  for (@references) {
+    pod2usage "--reference $_ not a readable file"
+      unless -r $_;
+  }
+
+  # $ScoreConfig::VERBOSE = $verbose;
+  $Parse::VERBOSE = $verbose;
+  $Deps::VERBOSE = $verbose;
+
+  use Score;
+  use ScoreConfig;
+
+  my %done_here;
+  for my $scoreclass (@scores) {
+    warn "hey, score $scoreclass not a Score\n"
+      unless UNIVERSAL::isa($scoreclass, 'Score');
+
+    my $cache =
+      $scoreclass->compute_cachename(trans => $translation,
+				     ref => \@references,
+				    );
+    if (not $done_here{$cache}) {
+      warn "writing $scoreclass to $cache\n"
+	if $verbose;
+
+      $scoreclass->write_cachefile_from_raw(trans => $translation,
+					    ref => \@references,
+					    cache => $cache);
+      $done_here{$cache}++;
+      warn "done writing $cache\n"
+	if $verbose;
+    }
+
+    my @seg_scores = $scoreclass->read_cachefile(cache => $cache);
+
+    for my $seg (@seg_scores) {
+      print $seg->id(), " ", $scoreclass, " ", $seg->score(), "\n";
+    }
+    my $doc_score = EDPM->combine(@seg_scores);
+    print "total $scoreclass score from cache $cache: ", $doc_score->score(), "\n";
+
+  }
+}
+exit 0;
+
+
+
+__END__
+
+=head1 NAME
+
+  scores-from-raw - generates scores and cachefiles for each score system
+
+=head1 SYNOPSIS
+
+  scores-from-raw [options] --translation TFILE [ --reference RFILE ]+
+
+  Options:
+     -help        brief help message
+     -man         full documentation
+    --verbose     more verbose to STDERR
+
+    --translation TFILE   a translation file
+    --reference   RFILE   a reference file [repeatable option]
+
+   cachefile names chosen in the same directory as (and based on)
+   TFILE, with extension changed as specified by the score class (and
+   settings in the ScoreConfig.pm).
+
+=head1 OPTIONS
+
+=over
+
+=item B<--help>
+
+=item B<-?>
+
+Show this help message.
+
+=item B<--man>
+
+Show the manual page for this script.
+
+=item B<--verbose>
+
+Repeatable option. Report more of what we're doing.
+
+=back
+
+=head1 DESCRIPTION
+
+Note that the files must be "raw", i.e. of the format:
+
+  Text of translation. (IDoftranslation)
+  Text of next translation, (Idofnexttranslation)
+
+etc.  The ids must match between the hypothesis file and reference
+file.
+
+The filename of both translation and reference must end in 
+
+=head2 CAVEATS
+
+=head2 TO DO
+
+=over
+
+=item *
+
+Add C<--outdir> option
+
+=item *
+
+Add option to specify id string in cachefile for variations
+
+=item *
+
+Add ability to adjust score list
+
+=back
+
+=head1 AUTHOR
+
+Jeremy G. Kahn E<lt>jgk@ssli.ee.washington.eduE<gt>
+
+=cut

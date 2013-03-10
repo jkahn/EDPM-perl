@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+use warnings;
+use strict;
+
+my $root = ".";
+
+my $DIST = "edpm-dist";
+my $version = shift @ARGV;
+
+if (not defined $version) {
+  die "provide a version number as an arg\n";
+}
+
+
+my $targetdir = "./$DIST-$version";
+my $TARBALL = "$DIST-$version.tgz";
+
+my ($svn_url) = grep {/^URL:/} `svn info $root`;
+chomp $svn_url;
+$svn_url =~ s/^URL:\s*//;
+
+my $rc = system (qw(svn export), $svn_url, $targetdir);
+
+die "svn call exited with non-zero\n"
+  if $rc;
+
+# exit 0;
+
+# don't ship the tex files for the papers
+use File::Path 'rmtree';
+rmtree(["$targetdir/papers"], 0, 1);
+
+my $rc2 = system (qw(tar zcf), $TARBALL, $targetdir);
+die "tarring exited non-zero\n" if $rc2;
+
+rmtree([$targetdir], 0,1);
+
+warn "dist created at $TARBALL\n";
+

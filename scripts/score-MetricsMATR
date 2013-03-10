@@ -1,0 +1,325 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+#Globals
+my $verbose = 0;
+my $debug   = 0;
+
+use FindBin;
+use lib "$FindBin::Bin/../libs";
+
+use EDPM;
+use ScoreConfig;
+my (@scores) = 'EDPM';
+
+{
+  use Getopt::Long;
+  use Pod::Usage;
+
+  my ( $help, $man );
+  my $revision = q$Id$;
+
+  my ($cachedir, $outdir);
+  my ($translation, $reference); # files by named arg
+  GetOptions(
+	     # help parameters
+	     'help|?' => \$help,
+	     man      => \$man,
+	     'verbose+' => \$verbose,
+	     'debug' => \$debug,
+	     'version' => sub {
+	       pod2usage (-exitstatus => 0, -verbose => 0,
+			  -message  => "CVS revision: \$$revision\$") },
+
+	     # system parameters here; use `perldoc Getopt::Long` to
+	     # see what you can do
+	     'cachedir=s' => \$cachedir,
+	     'outdir=s' => \$outdir,
+	     'translation=s' => \$translation,
+	     'reference=s' => \$reference,
+	    ) or pod2usage(2);
+  pod2usage(1) if ($help);
+  pod2usage( -exitstatus => 0, -verbose => 2 ) if ($man);
+
+  my @mteval_sgms = @ARGV;
+
+  # support both in one file, but not with extra --translation arg
+  if (@mteval_sgms) {
+    if ($translation or $reference) {
+      pod2usage "can't provide extra SGM arguments and a " .
+	"--reference or --translation argument";
+    }
+  }
+  else {
+    # separate reference, translation
+    pod2usage "no --translation specified"
+      unless defined $translation;
+    pod2usage "--translation $translation not a file"
+      unless -f $translation;
+    pod2usage "no --reference specified"
+      unless defined $reference;
+    pod2usage "--reference $reference not a file"
+      unless -f $reference;
+  }
+  # arg checking here (use pod2usage here; test for -f or -d etc)
+
+
+
+  pod2usage "no --outdir defined"
+    unless defined $outdir;
+
+  pod2usage "--outdir $outdir not a directory or not writeable"
+    unless -d $outdir and -w $outdir;
+
+  if (defined $cachedir) {
+    use List::MoreUtils 'uniq';
+    use File::Basename 'basename';
+    my @uniq_mteval_basenames = uniq map {basename $_} @mteval_sgms;
+    die "can't use a single --cachedir $cachedir :" .
+      "mteval basenames not unique\n"
+	unless @uniq_mteval_basenames == @mteval_sgms;
+  }
+  else {
+    warn "--cachedir not specified, using current directory \n";
+    $cachedir = ".";
+  }
+
+  pod2usage "--cachedir $cachedir not a directory\n"
+    if defined $cachedir and not -d $cachedir;
+  pod2usage "--cachedir $cachedir not writeable\n"
+    if defined $cachedir and not -w $cachedir;
+
+  # $ScoreConfig::VERBOSE = $verbose;
+  $Parse::VERBOSE = $verbose;
+  $Deps::VERBOSE  = $verbose;
+  $MTEval::DEBUG = $debug;
+
+  use Score;
+  use ScoreConfig;
+
+  my @mteval_objs;
+
+  # read them separately?
+  if ($translation and $reference) {  # could we ever not have both?
+    push @mteval_objs, MTEval->new(tfile => $translation,
+				   reffile => $reference);
+  }
+
+  # or support them all in one file
+  for my $mteval (@mteval_sgms) {
+    warn "reading SGM from file $mteval\n"
+      if $verbose;
+    my $mteval_obj;
+    eval { $mteval_obj = MTEval->new(file => $mteval) };
+    if ($@) {
+      die "problem parsing ARGV file $mteval : $@\n";
+    }
+    push @mteval_objs, $mteval_obj;
+  }
+
+  for (@mteval_objs) {
+    score_mteval (mteval => $_,
+		  cachedir => $cachedir,
+		  outdir => $outdir);
+  }
+}
+exit 0;
+sub score_mteval {
+  my %args = @_;
+  my $mteval = $args{mteval};
+
+  my ($tset) = $mteval->tset();
+  my (@refsets) = $mteval->refsets();
+
+  my $trans_raw = $args{cachedir} .'/'. $tset->sysid() . ".raw";
+  $tset->write_rawfile($trans_raw);
+
+  my @ref_raw;
+  for my $refset (@refsets) {
+    my $ref_raw = $args{cachedir} . "/" . $refset->sysid() . ".raw";
+    warn "ref set " . $refset->sysid() . "doesn't match translation set "
+      . $tset->sysid() . "\n"
+	unless $tset->setid() eq $refset->setid();
+    $refset->write_rawfile($ref_raw);
+    push @ref_raw, $ref_raw;
+
+  }
+  my $refid = join "-", map { $_->sysid() } @refsets;
+  # for the cachefile
+
+  my %done_here;
+  for my $scoreclass (@scores) {
+    warn "hey, score $scoreclass not a Score\n"
+      unless UNIVERSAL::isa($scoreclass, 'Score');
+
+
+    my $cache =
+      $scoreclass->compute_cachename(trans => $trans_raw,
+				     ref => \@ref_raw,
+				     refid => $refid,
+				    );
+    if (not $done_here{$cache}) {
+      warn "writing $scoreclass to $cache\n"
+	if $verbose;
+
+      $scoreclass->write_cachefile_from_raw(trans => $trans_raw,
+					    ref => \@ref_raw,
+					    cache => $cache);
+      $done_here{$cache}++;
+      warn "done writing $cache\n"
+	if $verbose;
+    }
+
+    my @seg_scores = $scoreclass->read_cachefile(cache => $cache);
+
+    report_scores ($args{outdir}, $tset->sysid, $tset->setid, @seg_scores);
+  }
+}
+sub write_raw {
+  my $sgm = shift;
+  my $cachedir = shift;
+
+  use File::Basename 'fileparse';
+  my ($indir, $sysid, $suffix) = fileparse($sgm, '.sgm');
+
+  if (not defined $cachedir) {
+    $cachedir = $indir;
+  }
+  my $raw = "$cachedir/$sysid.raw";
+
+  use MTEval;
+  my $mteval = MTEval->new(file => $sgm);
+  die "filename $sgm doesn't match internal sysid"
+    unless $mteval->sysid() eq $sysid;
+
+  my $setid = $mteval->setid();
+
+
+  if (not -f $raw) {
+    die "somehow didn't write raw $raw from SGM $sgm, not sure why\n";
+  }
+  if (-f $raw and -M $sgm >= -M $raw) {
+    warn "rawfile $raw already extracted, skipping\n";
+  }
+  else {
+    $mteval->write_rawfile($raw);
+  }
+
+  return ($raw, $setid);
+}
+
+sub report_scores {
+  my $dir = shift;
+  my $sysid = shift;
+  my $setid = shift;
+  my @scores = @_;
+
+  my %scores_by_doc;
+  {
+    my $seg_scores = "$dir/$sysid-seg.scr";
+    warn "writing segment scoring file $seg_scores\n"
+      if $verbose;
+    open my $fh, ">", $seg_scores
+      or die "couldn't open segment-scoring file $seg_scores: $!\n";
+    for my $score (@scores) {
+      my $fullid = $score->id();
+      my ($docid, $segid) = split /\//, $fullid, 2;
+      push @{$scores_by_doc{$docid}}, $score;
+      print $fh join ("\t", $setid, $sysid,
+		      $docid, $segid, $score->score()), "\n";
+    }
+    close $fh
+      or die "couldn't close segment-scoring file $seg_scores: $!\n";
+  }
+  {
+    my $doc_scores = "$dir/$sysid-doc.scr";
+    warn "writing doc scoring file $doc_scores\n"
+      if $verbose;
+    open my $fh, ">", $doc_scores
+      or die "couldn't open doc-scoring file $doc_scores: $!\n";
+    for my $docid (sort keys %scores_by_doc) {
+      my $docscore = EDPM->combine(@{$scores_by_doc{$docid}});
+      print $fh join ("\t", $setid, $sysid,
+		      $docid, $docscore->score()), "\n";
+    }
+    close $fh
+      or die "couldn't close doc-scoring file $doc_scores: $!\n";
+  }
+  {
+    my $sys_scores = "$dir/$sysid-sys.scr";
+    my $system_score = EDPM->combine(@scores);
+    warn "writing sys scoring file $sys_scores\n"
+      if $verbose;
+    open my $fh, ">", $sys_scores
+      or die "couldn't open system scores '$sys_scores': $!\n";
+    print $fh join ("\t",$setid, $sysid, $system_score->score()), "\n";
+    close $fh
+      or die "couldn't close system scores '$sys_scores': $!\n";
+  }
+}
+
+
+
+__END__
+
+=head1 NAME
+
+  score-MetricsMATR - generates scores and cachefiles for each score system given LDC data input
+
+=head1 SYNOPSIS
+
+  score-MetricsMATR [options] --translation TFILE [ --reference RFILE ]+
+
+  Options:
+     -help        brief help message
+     -man         full documentation
+    --verbose     more verbose to STDERR
+
+    --translation TFILE   a translation file
+    --reference   RFILE   a reference file [repeatable option]
+
+    --outdir DIR   where to write the scorefiles
+
+    --cachedir DIR where to cache parses and partial scores. If
+                   unspecified, write in same directory as inputs
+
+
+    --debug
+
+=head1 OPTIONS
+
+=over
+
+=item B<--help>
+
+=item B<-?>
+
+Show this help message.
+
+=item B<--man>
+
+Show the manual page for this script.
+
+=item B<--verbose>
+
+Repeatable option. Report more of what we're doing.
+
+=back
+
+=head1 DESCRIPTION
+
+Files must be in the format described in mm08_evalplan.pdf (a copy of which is in the C<docs/> directory of this distribution).
+
+=head2 CAVEATS
+
+assumes sysid will be available as filename and that it's the same one
+in the text.  really seems like sysid should be a feature of the
+C<tstset> but that's not how the XML is coded.
+
+=head1 AUTHOR
+
+Jeremy G. Kahn E<lt>jgk@ssli.ee.washington.eduE<gt>
+
+=cut

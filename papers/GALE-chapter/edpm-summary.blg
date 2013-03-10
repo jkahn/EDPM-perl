@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: edpm-summary.aux
+The style file: acl.bst
+Database file #1: edpm-summary.bib
+You've used 11 entries,
+            2490 wiz_defined-function locations,
+            647 strings with 6698 characters,
+and the built_in function-call counts, 4804 in all, are:
+= -- 509
+> -- 129
+< -- 7
++ -- 40
+- -- 40
+* -- 285
+:= -- 694
+add.period$ -- 44
+call.type$ -- 11
+change.case$ -- 62
+chr.to.int$ -- 11
+cite$ -- 11
+duplicate$ -- 243
+empty$ -- 426
+format.name$ -- 56
+if$ -- 1080
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 69
+num.names$ -- 33
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 73
+quote$ -- 0
+skip$ -- 213
+stack$ -- 0
+substring$ -- 263
+swap$ -- 90
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 88
+warning$ -- 0
+while$ -- 43
+width$ -- 13
+write$ -- 152

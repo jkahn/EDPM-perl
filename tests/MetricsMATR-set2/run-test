@@ -1,0 +1,53 @@
+#!/bin/bash -u
+
+DISTROOT=~/work/EDPM
+
+DEVCORPUS=/g/ssli/data/LDC2008E43_NISTMetricsMATR08Dev/mt06
+cachedir=./cache
+oneref=./1ref
+tworef=./2ref
+
+verbose="";
+verbose="--verbose";
+
+mkdir -p $cachedir
+
+# ONE REFERENCE
+mkdir -p $oneref
+# $DISTROOT/scripts/create-mteval --translation $DEVCORPUS/systems/system01.sgm \
+#     --reference $DEVCORPUS/references/reference01.sgm \
+#     > $oneref/system01-reference01.xml
+$DISTROOT/scripts/wrap-mteval $DEVCORPUS/systems/system01.sgm \
+    > $oneref/system01.xml
+$DISTROOT/scripts/wrap-mteval $DEVCORPUS/references/reference01.sgm \
+    > $oneref/reference01.xml
+
+$DISTROOT/scripts/score-MetricsMATR $verbose \
+    --outdir $oneref \
+    --cachedir $cachedir \
+    --translation $oneref/system01.xml \
+    --reference $oneref/reference01.xml
+
+# TWO REFERENCES
+
+ mkdir -p $tworef
+# $DISTROOT/scripts/create-mteval --translation $DEVCORPUS/systems/system01.sgm \
+#     --reference $DEVCORPUS/references/reference01.sgm \
+#     --reference $DEVCORPUS/references/reference02.sgm \
+#     > $tworef/system01-reference01-reference02.xml
+$DISTROOT/scripts/wrap-mteval $DEVCORPUS/systems/system01.sgm \
+    > $tworef/system01.xml
+$DISTROOT/scripts/wrap-mteval \
+    $DEVCORPUS/references/reference01.sgm \
+    $DEVCORPUS/references/reference02.sgm \
+    > $tworef/reference01-reference02.xml
+
+# TO DO: revive this bit:
+$DISTROOT/scripts/score-MetricsMATR $verbose \
+    --outdir $tworef \
+    --cachedir $cachedir \
+    --translation $tworef/system01.xml \
+    --reference $tworef/reference01-reference02.xml
+#     $tworef/system01-reference01-reference02.xml
+
+echo "results in $oneref ($tworef) ;  cache in $cachedir" 1>&2;

@@ -1,0 +1,56 @@
+#!/bin/bash -u
+
+DISTROOT=~/work/EDPM
+DEVCORPUS=/g/ssli/data/LDC2008E43_NISTMetricsMATR08Dev
+
+TOYCORPUS=~/work/EDPM/tests/MetricsMATR-toy1
+cachedir=$TOYCORPUS/cache
+
+mkdir -p $cachedir
+
+# ONE REFERENCE
+
+mkdir -p $TOYCORPUS/1ref
+# $DISTROOT/scripts/create-mteval --translation $TOYCORPUS/system01.sgm \
+#     --reference $TOYCORPUS/reference01.sgm \
+#     > $TOYCORPUS/1ref/system01-reference01.xml
+$DISTROOT/scripts/wrap-mteval $TOYCORPUS/system01.sgm \
+    > $TOYCORPUS/1ref/system01.xml
+$DISTROOT/scripts/wrap-mteval $TOYCORPUS/reference01.sgm \
+    > $TOYCORPUS/1ref/reference01.xml
+
+
+# $DISTROOT/scripts/score-MetricsMATR --verbose \
+#     --outdir $TOYCORPUS/1ref \
+#     --cachedir $cachedir \
+#     $TOYCORPUS/1ref/system01-reference01.xml
+$DISTROOT/scripts/score-MetricsMATR --verbose \
+    --outdir $TOYCORPUS/1ref \
+    --cachedir $cachedir \
+    --translation $TOYCORPUS/1ref/system01.xml \
+    --reference $TOYCORPUS/1ref/reference01.xml
+
+## TWO REFERENCES
+
+mkdir -p $TOYCORPUS/2ref
+# $DISTROOT/scripts/create-mteval --translation $TOYCORPUS/system01.sgm \
+#     --reference $TOYCORPUS/reference01.sgm \
+#     --reference $TOYCORPUS/reference02.sgm \
+#     > $TOYCORPUS/2ref/system01-reference01-reference02.xml
+$DISTROOT/scripts/wrap-mteval $TOYCORPUS/system01.sgm \
+    > $TOYCORPUS/2ref/system01.xml
+$DISTROOT/scripts/wrap-mteval \
+    $TOYCORPUS/reference01.sgm $TOYCORPUS/reference02.sgm \
+    > $TOYCORPUS/2ref/reference01-reference02.xml
+
+# $DISTROOT/scripts/score-MetricsMATR --verbose \
+#     --outdir $TOYCORPUS/2ref \
+#     --cachedir $cachedir \
+#     $TOYCORPUS/2ref/system01-reference01-reference02.xml
+
+$DISTROOT/scripts/score-MetricsMATR --verbose \
+    --outdir $TOYCORPUS/2ref \
+    --cachedir $cachedir \
+    --translation $TOYCORPUS/2ref/system01.xml \
+    --reference $TOYCORPUS/2ref/reference01-reference02.xml
+ 

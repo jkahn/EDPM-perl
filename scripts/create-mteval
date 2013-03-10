@@ -1,0 +1,123 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+#Globals
+my $verbose = 0;
+my $debug   = 0;
+
+use FindBin;
+use lib "$FindBin::Bin/../libs";
+
+use EDPM;
+use ScoreConfig;
+
+use Getopt::Long;
+use Pod::Usage;
+
+my ( $help, $man );
+my $revision = q$Id$;
+my $translation;
+my (@references);
+my (@scores) = 'EDPM';
+
+my ($cachedir, $outdir);
+GetOptions(
+	   # help parameters
+	   'help|?' => \$help,
+	   man      => \$man,
+	   'verbose+' => \$verbose,
+	   'debug' => \$debug,
+	   'version' => sub {
+	     pod2usage (-exitstatus => 0, -verbose => 0,
+			-message  => "CVS revision: \$$revision\$") },
+
+	   # system parameters here; use `perldoc Getopt::Long` to
+	   # see what you can do
+	   'translation=s' => \$translation,
+	   'reference=s' => \@references,
+	  ) or pod2usage(2);
+pod2usage(1) if ($help);
+pod2usage( -exitstatus => 0, -verbose => 2 ) if ($man);
+
+# arg checking here (use pod2usage here; test for -f or -d etc)
+
+pod2usage "no --translation defined"
+  unless defined $translation;
+pod2usage "no --reference defined"
+  unless @references;
+
+pod2usage "--translation $translation not a readable file"
+  unless -r $translation;
+for (@references) {
+  pod2usage "--reference $_ not a readable file"
+    unless -r $_;
+}
+
+$MTEval::DEBUG = $debug;
+
+use MTEval;
+MTEval->build (\*STDOUT, $translation, @references);
+
+exit 0;
+
+__END__
+
+=head1 NAME
+
+  create-mteval - create full <mteval> evaluation file from LDC MetricsMATR dev set
+
+=head1 SYNOPSIS
+
+  create-mteval [options] --translation TFILE [ --reference RFILE ]+
+
+  Options:
+     -help        brief help message
+     -man         full documentation
+    --verbose     more verbose to STDERR
+
+    --translation TFILE   a translation file
+    --reference   RFILE   a reference file [repeatable option]
+
+
+    --debug
+
+=head1 OPTIONS
+
+=over
+
+=item B<--help>
+
+=item B<-?>
+
+Show this help message.
+
+=item B<--man>
+
+Show the manual page for this script.
+
+=item B<--verbose>
+
+Repeatable option. Report more of what we're doing.
+
+=back
+
+=head1 DESCRIPTION
+
+Files must be self-contained C<< <tstset> >> or C<< <refset> >> XML
+nodes in the format described in mm08_evalplan.pdf (a copy of which is
+in the C<docs/> directory of this distribution).
+
+=head2 CAVEATS
+
+This script does no checking -- if you give it bad XML, it will
+happily create broken mteval files.  It does some cleaning that is
+tuned towards making the LDC SGML data compatible with
+(case-sensitive) XML parsers.
+
+=head1 AUTHOR
+
+Jeremy G. Kahn E<lt>jgk@ssli.ee.washington.eduE<gt>
+
+=cut

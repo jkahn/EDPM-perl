@@ -1,0 +1,76 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Banerjee and Lavie}2005]{banerjee05meteor}
+S.~Banerjee and A.~Lavie.
+\newblock 2005.
+\newblock {METEOR}: An automatic metric for {MT} evaluation with improved
+  correlation with human judgments.
+\newblock In {\em Proc. ACL Workshop on Intrinsic \& Extrinsic Eval.~Measures
+  for {MT}}, pp. 65--72.
+
+\bibitem[\protect\citename{Cahill and others}2004]{cahill04lfg}
+A.~Cahill et~al.
+\newblock 2004.
+\newblock Long-distance dependency resolution in automatically acquired
+  wide-coverage {PCFG}-based {LFG} approximations.
+\newblock In {\em Proc.\ ACL}, pp. 319--326.
+
+\bibitem[\protect\citename{Charniak and
+  Johnson}2005]{charniak-johnson:2005:ACL}
+E.~Charniak and M.~Johnson.
+\newblock 2005.
+\newblock Coarse-to-fine $n$-best parsing and {M}ax{E}nt discriminative
+  reranking.
+\newblock In {\em Proc.\ ACL}, pp. 173--180.
+
+\bibitem[\protect\citename{Huang}2008]{huang08parseforests}
+L.~Huang.
+\newblock 2008.
+\newblock Forest reranking: Discriminative parsing with non-local features.
+\newblock In {\em Proc.\ ACL: HLT}, pp. 586--594.
+
+\bibitem[\protect\citename{LDC}2003]{LDC03MTC2}
+LDC.
+\newblock 2003.
+\newblock Multiple translation {C}hinese corpus, part 2.
+\newblock Catalog number {LDC2003T17}.
+
+\bibitem[\protect\citename{LDC}2006]{LDC06MTC4}
+LDC.
+\newblock 2006.
+\newblock Multiple translation {C}hinese corpus, part 4.
+\newblock Catalog number {LDC2006T04}.
+
+\bibitem[\protect\citename{Liu and Gildea}2005]{liu05syntaxformteval}
+D.~Liu and D.~Gildea.
+\newblock 2005.
+\newblock Syntactic features for evaluation of machine translation.
+\newblock In {\em Proc. ACL Workshop on Intrinsic \& Extrinsic Eval.~Measures
+  for {MT}}, pp. 25--32.
+
+\bibitem[\protect\citename{Magerman}1995]{magerman95headfinding}
+D.~M. Magerman.
+\newblock 1995.
+\newblock Statistical decision-tree models for parsing.
+\newblock In {\em Proc.\ ACL}, pp. 276--283.
+
+\bibitem[\protect\citename{Owczarzak \bgroup et al.\egroup
+  }2007]{owczarzak07labelleddepseval}
+K.~Owczarzak, J.~van Genabith, and A.~Way.
+\newblock 2007.
+\newblock Labelled dependencies in machine translation evaluation.
+\newblock In {\em Proc.~2nd Workshop on Statistical {MT}}, pp. 104--111.
+
+\bibitem[\protect\citename{Roark and others}2006]{roark06:sparseval}
+B.~Roark et~al.
+\newblock 2006.
+\newblock {SParseval}: Evaluation metrics for parsing speech.
+\newblock In {\em Proc.~LREC}.
+
+\bibitem[\protect\citename{Turian \bgroup et al.\egroup }2003]{turian03mteval}
+J.~P. Turian, L.~Shen, and D.~I. Melamed.
+\newblock 2003.
+\newblock Evaluation of machine translation and its evaluation.
+\newblock In {\em Proc. MT Summit IX}.
+
+\end{thebibliography}

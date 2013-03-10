@@ -1,0 +1,25 @@
+26 August 2008  0.13
+  - jgk
+  * update Lingua::Treebank to assign consecutive integers for numeric
+    ids rather than memory locations -- avoids portability warnings on 
+    64-bit systems
+  * MetricsMATR tool now supports separate --translation and
+    reference files
+  * included testing code in distribution under tests/ directory
+
+21 August 2008  0.12
+  - jgk
+
+redistributed to include toools for scoring for MetricsMATR (thanks
+Sebastien!)
+
+25 July 2008    0.11
+  - jgk
+checked in to source control. Fixed bug that only appeared on first run.
+added missing use NGram to DPM.pm
+
+15 July 2008    0.10
+  - jgk
+assembled code into distributable packet. Much probably
+still left to do, but at least core code compiles.
+

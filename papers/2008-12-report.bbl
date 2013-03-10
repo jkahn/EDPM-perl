@@ -1,0 +1,31 @@
+\begin{thebibliography}{{DAR}08}
+
+\bibitem[CJ05]{charniak-johnson:2005:ACL}
+Eugene Charniak and Mark Johnson.
+\newblock Coarse-to-fine $n$-best parsing and {M}ax{E}nt discriminative
+  reranking.
+\newblock In {\em Proc.\ ACL}, pages 173--180, 2005.
+
+\bibitem[{DAR}08]{darpa08gale}
+{DARPA}.
+\newblock {G}lobal {A}utonomous {L}anguage {E}xploitation ({GALE}).
+\newblock Mission, \url{http://www.darpa.mil/ipto/programs/gale/gale.asp},
+  2008.
+
+\bibitem[LDC03]{LDC03MTC2}
+LDC.
+\newblock Multiple translation {C}hinese corpus, part 2, 2003.
+\newblock Catalog number {LDC2003T17}.
+
+\bibitem[LDC06]{LDC06MTC4}
+LDC.
+\newblock Multiple translation {C}hinese corpus, part 4, 2006.
+\newblock Catalog number {LDC2006T04}.
+
+\bibitem[OvGW07]{owczarzak07labelleddepseval}
+Karolina Owczarzak, Josef van Genabith, and Andy Way.
+\newblock Labelled dependencies in machine translation evaluation.
+\newblock In {\em Proc.~2nd Workshop on Statistical {MT}}, pages 104--111,
+  2007.
+
+\end{thebibliography}

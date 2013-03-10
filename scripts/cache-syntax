@@ -1,0 +1,129 @@
+#!/usr/nikola/bin/perl
+
+use strict;
+use warnings;
+
+#Globals
+my $verbose = 0;
+
+use FindBin;
+use lib "$FindBin::Bin/../libs";
+
+use EDPM;
+use ScoreConfig;
+
+
+use Getopt::Long;
+use Pod::Usage;
+
+my ( $help, $man );
+my $revision = q$Id$;
+GetOptions(
+	   # help parameters
+	   'help|?' => \$help,
+	   man      => \$man,
+	   'verbose+' => \$verbose,
+	   'version' => sub {
+	     pod2usage (-exitstatus => 0, -verbose => 0,
+			-message  => "CVS revision: \$$revision\$") },
+
+	   # system parameters here; use `perldoc Getopt::Long` to
+	   # see what you can do
+	  ) or pod2usage(2);
+pod2usage(1) if ($help);
+pod2usage( -exitstatus => 0, -verbose => 2 ) if ($man);
+
+# arg checking here (use pod2usage here; test for -f or -d etc)
+
+$Parse::VERBOSE = $verbose;
+$Deps::VERBOSE = $verbose;
+
+use ScoreConfig;
+my @in;
+for my $file (@ARGV) {
+  if (not -f $file) {
+    pod2usage "file '$file' not a file\n";
+  }
+  push @in, $file;
+}
+
+for my $file (@in) {
+  warn "cacheing syntax for rawfile '$file'\n"
+    if $verbose;
+  my ($depsfile) = EDPM->cache_syntax($file);
+  warn "generated dependency file '$depsfile'\n"
+    if $verbose;
+}
+
+exit 0;
+
+
+
+__END__
+
+=head1 NAME
+
+  cache-syntax - generates syntax-cache files for each argument
+
+=head1 SYNOPSIS
+
+  cache-syntax [options] FILE1 FILE2 ...
+
+  Options:
+     -help        brief help message
+     -man         full documentation
+    --verbose     more verbose to STDERR
+
+   cachefile names chosen in the same directory as (and based on) FILE
+   arguments, with extension changed as specified by the Deps and
+   Parse classes (and settings in the ScoreConfig.pm).
+
+=head1 OPTIONS
+
+=over
+
+=item B<--help>
+
+=item B<-?>
+
+Show this help message.
+
+=item B<--man>
+
+Show the manual page for this script.
+
+=item B<--verbose>
+
+Repeatable option. Report more of what we're doing.
+
+=back
+
+=head1 DESCRIPTION
+
+Note that the files must be "raw", i.e. of the format:
+
+  Text of translation. (IDoftranslation)
+  Text of next translation, (Idofnexttranslation)
+
+etc.  The ids must match between the hypothesis file and reference
+file.
+
+The filename of both translation and reference must end in 
+
+=head2 CAVEATS
+
+=head2 TO DO
+
+=over
+
+=item *
+
+Add option to specify id string in cachefile for variations
+
+=back
+
+=head1 AUTHOR
+
+Jeremy G. Kahn E<lt>jgk@ssli.ee.washington.eduE<gt>
+
+=cut

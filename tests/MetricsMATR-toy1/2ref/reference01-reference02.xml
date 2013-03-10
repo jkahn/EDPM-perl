@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mteval SYSTEM "ftp://jaguar.ncsl.nist.gov/mt/resources/mteval-xml-v1.0.dtd">
+<mteval><refset setid="mt06_arabic_evlset_nist_part_v1" srclang="Arabic" trglang="English">
+<doc docid="AFP_ARB_20060206.0155" genre="newswire" sysid="reference01">
+<p>
+<seg id="1"> Roed-Larsen: Middle East a "Powder Keg with Lit Fuse" </seg>
+</p>
+<p>
+<seg id="2"> Oslo 2-6 (AFP) - Terje Roed-Larsen, the former United Nations Middle East envoy, considered the situation in the region as having never been as dangerous as it is today and compared the region to a "powder keg with a lit fuse". </seg>
+</p>
+<p>
+<seg id="3"> Roed-Larsen, speaking to the Norwegian NRK radio station said that "the region can now be compared in several respects to a powder keg with a lit fuse." </seg>
+</p>
+<p>
+<seg id="4"> He added "I think the situation is more difficult, complicated and dangerous than it has been for a number of decades." </seg>
+</p>
+<p>
+<seg id="5"> Among the existing and potential crises in the Middle East, Roed-Larsen mentioned the Arab-Israeli dispute, the Iranian nuclear portfolio and the crisis between Lebanon and Syria. </seg>
+</p>
+<p>
+<seg id="6"> He said that "all this brings us back to issues of fundamental values and opinions which make the situation more likely to get out of control at any moment than it has been in the last few days." </seg>
+</p>
+<p>
+<seg id="7"> Roed-Larsen did not openly mention the acts of violence that permeated demonstrations in the Muslim world in protest against the publication of caricatures of the Prophet Muhammad in the European press, limiting himself to emphasizing the need for "dialogue" rather than "throwing stones and lighting fires." </seg>
+</p>
+<p>
+<seg id="8"> Demonstrators set fire to the Danish and Norwegian embassy buildings in Damascus on Saturday while a building housing the Danish embassy in Beirut was set on fire in response to the publication of the caricatures in September in the Danish newspaper Jyllands-Posten and their subsequent republication in the European media, led by the Norwegian magazine Magazinet. </seg>
+</p>
+<p>
+<seg id="9"> Roed-Larsen is currently in charge of monitoring the implementation of Security Council resolution 1559 which stipulates the disarmament of militias and armed groups in Lebanon, including, in the international organization's opinion, the Lebanese Shiite Hezbollah and Palestinian groups. </seg>
+</p>
+</doc>
+</refset>
+<refset setid="mt06_arabic_evlset_nist_part_v1" srclang="Arabic" trglang="English">
+<doc docid="AFP_ARB_20060206.0155" genre="newswire" sysid="reference02">
+<p>
+<seg id="1"> Roed-Larsen: The Middle East Is "A Powder Keg With A Lit Fuse." </seg>
+</p>
+<p>
+<seg id="2"> Oslo, February 6 (A.F.P.) - Terje Roed-Larsen, the former UN envoy to the Middle East, considered that the situation in that region was never at the level of danger in which it is today, and compared the region to "a powder keg with a lit fuse." </seg>
+</p>
+<p>
+<seg id="3"> Speaking to the Norwegian Public Radio "NRK", Roed-Larsen said: "In a lot of respects, the region now can be compared to a powder keg with a lit fuse." </seg>
+</p>
+<p>
+<seg id="4"> And he added: "I think that the situation is more difficult, more complicated and more dangerous than it has been in many decades." </seg>
+</p>
+<p>
+<seg id="5"> Among the current and latent crises in the Middle East, Roed-Larsen mentioned the Arab-Israeli conflict, the Iranian nuclear issue and the crisis between Lebanon and Syria. </seg>
+</p>
+<p>
+<seg id="6"> He said: "All this brings us back to issues of fundamental values and opinions that make the situation more vulnerable to getting out of control at any moment than it has in recent days." </seg>
+</p>
+<p>
+<seg id="7"> Roed-Larsen did not explicitly mention the acts of violence that occurred during demonstrations in the Islamic world in protest against the publication in European newspapers of cartoons about the Prophet Mohammad, but only emphasized the necessity of "dialogue" instead of "throwing stones and lighting fires." </seg>
+</p>
+<p>
+<seg id="8"> Demonstrators burned the two buildings of the Danish and Norwegian Embassies in Damascus on Saturday, whereas a building housing an office of the Danish Embassy in Beirut was burned, in reaction to the publication in September of drawings in the Danish daily Jyllands-Posten and their subsequent re-publication in a number of European media channels led by the Norwegian magazine "Magasinet." </seg>
+</p>
+<p>
+<seg id="9"> Roed-Larsen is currently in charge of monitoring the implementation of United Nations Security Council resolution 1559 that stipulates the disarming of militias and armed groups in Lebanon, including, according to that international organization, the Lebanese Shiite Hezbollah and Palestinian groups. </seg>
+</p>
+</doc>
+</refset>
+</mteval>

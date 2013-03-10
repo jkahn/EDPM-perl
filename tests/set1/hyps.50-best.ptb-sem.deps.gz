@@ -1,0 +1,450 @@
+# 1.h1 conf=-80.596
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h2 conf=-84.3524
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	0	ROOT/S	_	_
+
+# 1.h3 conf=-84.6612
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h4 conf=-85.5508
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h5 conf=-85.6131
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h6 conf=-86.0666
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NNP	NNP	_	0	ROOT/S	_	_
+
+# 1.h7 conf=-86.3969
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h8 conf=-87.5004
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	JJ	JJ	_	6	VP/ADVP	_	_
+
+# 1.h9 conf=-87.5201
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	JJ	JJ	_	6	VP/S	_	_
+
+# 1.h10 conf=-88.4909
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h11 conf=-89.3172
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h12 conf=-89.3695
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	0	ROOT/S	_	_
+
+# 1.h13 conf=-89.6276
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/FRAG	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h14 conf=-89.6783
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h15 conf=-89.8548
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h16 conf=-90.1534
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	2	NP/SBAR	_	_
+
+# 1.h17 conf=-90.4622
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h18 conf=-90.4729
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h19 conf=-90.5679
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h20 conf=-91.0837
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NNP	NNP	_	0	ROOT/S	_	_
+
+# 1.h21 conf=-91.2997
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NNP	NNP	_	0	ROOT/S	_	_
+
+# 1.h22 conf=-91.3518
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h23 conf=-91.8676
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NNP	NNP	_	2	NP/SBAR	_	_
+
+# 1.h24 conf=-91.9424
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/FRAG	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h25 conf=-92.0166
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	NN	NN	_	6	VP/ADVP	_	_
+
+# 1.h26 conf=-92.1115
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h27 conf=-92.2473
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	0	ROOT/S	_	_
+
+# 1.h28 conf=-92.5175
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	6	S/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	JJ	JJ	_	6	VP/ADVP	_	_
+
+# 1.h29 conf=-92.5372
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	6	S/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	JJ	JJ	_	6	VP/S	_	_
+
+# 1.h30 conf=-92.5561
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h31 conf=-92.7032
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	6	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	0	ROOT/S	_	_
+7	blue	_	NNP	NNP	_	6	VP/S	_	_
+
+# 1.h32 conf=-93.0737
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	0	ROOT/FRAG	_	_
+
+# 1.h33 conf=-93.3013
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	6	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	6	S/NP	_	_
+6	was	_	AUX	AUX	_	2	NP/SBAR	_	_
+7	blue	_	JJ	JJ	_	6	VP/ADVP	_	_
+
+# 1.h34 conf=-93.3211
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	6	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	6	S/NP	_	_
+6	was	_	AUX	AUX	_	2	NP/SBAR	_	_
+7	blue	_	JJ	JJ	_	6	VP/S	_	_
+
+# 1.h35 conf=-93.3758
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h36 conf=-93.3825
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h37 conf=-93.3841
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/FRAG	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	2	NP/SBAR	_	_
+
+# 1.h38 conf=-93.4457
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h39 conf=-93.6112
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	2	NP/SBAR	_	_
+
+# 1.h40 conf=-93.6929
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/FRAG	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h41 conf=-93.915
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/S	_	_
+
+# 1.h42 conf=-93.9201
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h43 conf=-93.9615
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NNP	NNP	_	0	ROOT/S	_	_
+
+# 1.h44 conf=-94.0864
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/S	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h45 conf=-94.2294
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	NN	NN	_	0	ROOT/FRAG	_	_
+
+# 1.h46 conf=-94.2656
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h47 conf=-94.2721
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	FRAG/NP	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h48 conf=-94.5382
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	7	S/NP	_	_
+3	in	_	IN	IN	_	5	PP/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	2	NP/PP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	0	ROOT/FRAG	_	_
+
+# 1.h49 conf=-94.5389
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/S	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+
+# 1.h50 conf=-94.5825
+1	the	_	DT	DT	_	2	NP/DT	_	_
+2	cat	_	NN	NN	_	0	ROOT/FRAG	_	_
+3	in	_	IN	IN	_	7	SBAR/IN	_	_
+4	the	_	DT	DT	_	5	NP/DT	_	_
+5	hat	_	NN	NN	_	7	S/NP	_	_
+6	was	_	AUX	AUX	_	7	VP/AUX	_	_
+7	blue	_	JJ	JJ	_	2	NP/SBAR	_	_
+

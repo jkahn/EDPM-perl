@@ -1,0 +1,10 @@
+#!/bin/bash -u
+
+DISTROOT=~/work/EDPM
+
+hyps=./hyps.raw
+ref1=./ref.raw
+ref2=./ref2.raw
+
+$DISTROOT/scripts/scores-from-raw --translation $hyps \
+    --reference $ref1 --reference $ref2

@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage{url}
+
+\begin{document}
+
+Work on machine-translation evaluation measures continued as Kahn,
+Ostendorf and Roark developed Expected Dependency Pair Match (EDPM).  
+
+EDPM uses a popular PCFG syntactic parser \cite{charniak-johnson:2005:ACL}
+to extract expected counts of dependency structures from hypothesis
+and reference translations and score them. 
+%
+EDPM is based on the intuitive and difficult-to-game $F$ measure, where
+the tokens to be matched are drawn from 1-grams, 2-gram, and in- and
+out-bound dependency links.  In this respect, it extends the
+dependency-scoring strategies of \cite{owczarzak07labelleddepseval} but does so
+with a widely-used and publicly available PCFG parser and head-finding
+rules.  Further, EDPM incorporates string-only features and uses
+the parser's own confidence to predict the (hidden) dependency structure.
+%
+EDPM's free parameters thus include the number of parses $n$ used in the
+calculation, the classes of tokens to be extracted for the F-measure,
+and the degree in which to trust the parser's confidence distribution
+over the $n$-best list.
+
+% [experiments on some other corpora]
+
+In experiments over the Multiple Translation Chinese Corpus \cite{LDC03MTC2,LDC06MTC4}, we explored a variety of measures in the EDPM family and
+selected the variant that best-correlated with human judgments of
+fluency and adequacy per sentence.  Over this corpus, the selected
+variant of EDPM correlated at $r=0.240$, much better than popular
+measures TER ($r=-0.173$) and (add-one-smoothed) BLEU$_4$ ($r=0.218$).
+
+% [differences from other popular measures] 
+
+The utility of this chosen variant was further tested in predicting
+the difference in human-targeted translation edit rate ($\Delta$HTER)
+between two translations of the same source from the unsequestered
+GALE 2.5 \cite{darpa08gale} Arabic-to-English and Chinese-to-English task.
+EDPM's per-document correlation with $\Delta$HTER over this corpus was
+better ($r=-0.47$) than BLEU$_4$ ($r=-0.32$) or TER ($r=0.39$), with
+similar effects on per-sentence correlations.
+
+% [competition]
+
+EDPM was submitted to the 2008 NIST MetricsMATR MT-evaluation
+competition. In this competition, EDPM performed the best overall on
+document-level HTER correlation, and within the confidence of the
+best-performance on all HTER measures (and nearly all other
+human-derived measures as well).
+XC
+Future work on EDPM will include the ability to change parsers (making
+it much easier to apply it to new domains or languages), partial-match
+scoring (using synonyms and other partial-match techniques) and
+exploration of other dependency graph-fragments.
+
+\bibliographystyle{alpha}
+\bibliography{2008-12-report}
+
+\end{document}
